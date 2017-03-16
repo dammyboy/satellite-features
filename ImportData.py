@@ -1,5 +1,6 @@
 from __future__ import division
 import csv 
+from TextFunctions import *
 
 KnowledgeAreas = ['biology', 'cooking', 'crypto', 'diy', 'robotics','travel']
 
@@ -15,7 +16,7 @@ for k in KnowledgeAreas:
             else:
                 curRow = {'Area': k}
                 curRow['Title'] = ktags[1]
-                curRow['Content'] = ktags[2]
+                curRow['Content'] = removeHTML(ktags[2])
                 tempTags = []
                 
                 curTags = ktags[3].split()
@@ -26,4 +27,3 @@ for k in KnowledgeAreas:
                 curRow['Tags'] = tempTags
                 TextAndTags.append(curRow)
 
-x=1               
