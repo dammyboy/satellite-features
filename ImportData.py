@@ -27,3 +27,7 @@ for k in KnowledgeAreas:
                 curRow['Tags'] = tempTags
                 TextAndTags.append(curRow)
 
+
+bioText, biotags = getTopicText('biology', TextAndTags)
+bioTfidf, bioVect = estimateTFIDF(bioText)
+x=1
